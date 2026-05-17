@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..900;1,9..40,100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="js/tailwind.config.js"></script>
+<link rel="stylesheet" href="css/styles.css"/>
+<style>
+  .display { font-family: 'Playfair Display', Georgia, serif; }
+  body { font-family: 'DM Sans', system-ui, sans-serif; }
+</style>
+<title>Gallery | Nachie's Space</title></head>
+<body class="bg-background text-on-surface">
+<!-- Navigation -->
+<header class="bg-background/95 backdrop-blur-md sticky top-0 z-50 border-b border-white/5">
+<nav class="flex justify-between items-center h-[72px] px-8 lg:px-16 w-full max-w-[1280px] mx-auto">
+  <a href="index.html" class="group flex items-baseline gap-2">
+    <span class="display italic text-2xl font-normal text-on-surface group-hover:text-primary transition-colors duration-300">Nachie's</span>
+    <span class="text-[10px] tracking-[0.25em] text-on-surface-variant/70 uppercase font-light">Space</span>
+  </a>
+  <div class="hidden md:flex items-center gap-8">
+    <a class="text-on-surface-variant text-sm hover:text-on-surface transition-colors duration-300" href="exhibitions.html">Exhibitions</a>
+    <a class="text-primary text-sm border-b border-primary/60 pb-px" href="collection.html">Gallery</a>
+    <a class="text-on-surface-variant text-sm hover:text-on-surface transition-colors duration-300" href="about.html">About</a>
+  </div>
+  <div class="flex items-center gap-5">
+    <button class="material-symbols-outlined text-[20px] text-on-surface-variant hover:text-primary transition-colors">search</button>
+    <a href="inquiry.html" class="group flex items-center gap-1.5 text-sm text-primary border border-primary/40 px-4 py-1.5 rounded-full hover:border-primary hover:bg-primary/5 transition-all duration-300">Inquire <span class="group-hover:translate-x-0.5 transition-transform duration-200">&rarr;</span></a>
+  </div>
+</nav>
+</header>
+<main>
+<!-- Marquee Strip -->
+<div class="overflow-hidden border-y border-white/5 py-3 bg-surface-container-low">
+  <div class="marquee-track flex gap-10 whitespace-nowrap text-[10px] tracking-[0.22em] uppercase text-on-surface-variant/50">
+    <span>The Gallery</span><span class="text-primary/70">&#10022;</span><span>17 Works</span><span class="text-primary/70">&#10022;</span><span>Nachilima</span><span class="text-primary/70">&#10022;</span><span>Available as Prints</span><span class="text-primary/70">&#10022;</span><span>Livingstone, Zambia</span><span class="text-primary/70">&#10022;</span><span>Digital Photography</span><span class="text-primary/70">&#10022;</span><span>The Gallery</span><span class="text-primary/70">&#10022;</span><span>17 Works</span><span class="text-primary/70">&#10022;</span><span>Nachilima</span><span class="text-primary/70">&#10022;</span><span>Available as Prints</span><span class="text-primary/70">&#10022;</span><span>Livingstone, Zambia</span><span class="text-primary/70">&#10022;</span><span>Digital Photography</span><span class="text-primary/70">&#10022;</span>
+  </div>
+</div>
+<section class="py-20 px-8 lg:px-16 max-w-[1280px] mx-auto">
+  <div class="mb-16">
+    <p class="text-[11px] tracking-[0.3em] uppercase text-on-surface-variant/50 mb-4">All work</p>
+    <h1 class="display italic font-bold text-on-surface leading-none" style="font-size:clamp(3rem,7vw,5.5rem);">The Gallery</h1>
+    <p class="text-[15px] text-on-surface-variant font-light mt-4 max-w-lg leading-relaxed">Photographs from Livingstone and beyond. Every image is available as a print &mdash; <a href="inquiry.html" class="text-primary hover:underline">get in touch</a> to enquire.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+      <div class="group cursor-pointer gallery-card-hover">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="The Girl — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/The_Girl.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">The Girl</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2025</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover md:mt-14">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Lady — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/Lady.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Lady</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2025</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Someone's Home — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/Someone_s_Home.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Someone's Home</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2025</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="A Perfect Sky — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/A_Perfect_Sky.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">A Perfect Sky</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2025</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover md:mt-14">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Victoria Falls Bridge — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/Victoria_Falls_Bridge.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Victoria Falls Bridge</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2026</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="I'll Leave the Light On — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/I_ll_Leave_the_Light_On.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">I'll Leave the Light On</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2026</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Ostrich — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/Ostrich.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Ostrich</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2025</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover md:mt-14">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Cow & Calf — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/Cow_&_Calf.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Cow & Calf</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2025</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Two Pigs — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/Two_Pigs.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Two Pigs</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2024</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Duck on the Side — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/Duck_on_the_side.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Duck on the Side</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2024</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover md:mt-14">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Shed — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/Shed.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Shed</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2024</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Miscellaneous — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/Miscellaneous.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Miscellaneous</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2024</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Terrible Ratio, 1:15 — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/Terrible_ratio,_1_15.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Terrible Ratio, 1:15</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2024</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover md:mt-14">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Study Hard, They Said — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/study_hard,_They_Said.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Study Hard, They Said</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2025</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Picasso Copy — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/picasso_copy.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Picasso Copy</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2023</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="The Stranger — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/The_Stranger..jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">The Stranger</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2025</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+      <div class="group cursor-pointer gallery-card-hover md:mt-14">
+        <div class="overflow-hidden mb-4 relative">
+          <img alt="Woman You'll Never Meet — Nachilima" class="w-full aspect-[4/5] object-cover img-reveal group-hover:scale-105 transition-transform duration-700" src="assets/images/optimized/Woman_You'll_Never_Meet.jpg"/>
+          <div class="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors duration-500"></div>
+        </div>
+        <h4 class="display italic font-normal text-lg text-on-surface mb-1">Woman You'll Never Meet</h4>
+        <p class="text-xs text-on-surface-variant/50 mb-2">Digital Photography, 2025</p>
+        <a href="inquiry.html" class="text-xs text-primary hover:underline">Inquire &rarr;</a>
+      </div>
+  </div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-white/5 bg-surface-container-lowest">
+  <div class="w-full py-10 px-8 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-6 max-w-[1280px] mx-auto">
+    <div class="flex flex-col items-center md:items-start gap-1.5">
+      <a href="index.html" class="display italic text-xl font-normal text-on-surface hover:text-primary transition-colors duration-300">Nachie's Space</a>
+      <p class="text-xs text-on-surface-variant/40">&copy; 2026 Nachilima (Constance Chola). All rights reserved.</p>
+    </div>
+    <div class="flex gap-7">
+      <a class="text-xs text-on-surface-variant/50 hover:text-primary transition-colors duration-300" href="about.html">About</a>
+      <a class="text-xs text-on-surface-variant/50 hover:text-primary transition-colors duration-300" href="collection.html">Gallery</a>
+      <a class="text-xs text-on-surface-variant/50 hover:text-primary transition-colors duration-300" href="inquiry.html">Contact</a>
+    </div>
+    <div class="flex gap-5 opacity-50 hover:opacity-100 transition-opacity">
+      <span class="material-symbols-outlined text-[18px] text-primary">language</span>
+      <span class="material-symbols-outlined text-[18px] text-primary">share</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Exhibitions | Nachie's Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..900;1,9..40,100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="js/tailwind.config.js"></script>
+<link rel="stylesheet" href="css/styles.css"/>
+<style>
+  .display { font-family: 'Playfair Display', Georgia, serif; }
+  body { font-family: 'DM Sans', system-ui, sans-serif; }
+</style>
+</head>
+<body class="bg-background text-on-surface">
+<header class="bg-background/95 backdrop-blur-md sticky top-0 z-50 border-b border-white/5">
+<nav class="flex justify-between items-center h-[72px] px-8 lg:px-16 w-full max-w-[1280px] mx-auto">
+  <a href="index.html" class="group flex items-baseline gap-2">
+    <span class="display italic text-2xl font-normal text-on-surface group-hover:text-primary transition-colors duration-300">Nachie's</span>
+    <span class="text-[10px] tracking-[0.25em] text-on-surface-variant/70 uppercase font-light">Space</span>
+  </a>
+  <div class="hidden md:flex items-center gap-8">
+    <a class="text-primary text-sm border-b border-primary/60 pb-px" href="exhibitions.html">Exhibitions</a>
+    <a class="text-on-surface-variant text-sm hover:text-on-surface transition-colors duration-300" href="collection.html">Gallery</a>
+    <a class="text-on-surface-variant text-sm hover:text-on-surface transition-colors duration-300" href="about.html">About</a>
+  </div>
+  <div class="flex items-center gap-5">
+    <button class="material-symbols-outlined text-[20px] text-on-surface-variant hover:text-primary transition-colors">search</button>
+    <a href="inquiry.html" class="group flex items-center gap-1.5 text-sm text-primary border border-primary/40 px-4 py-1.5 rounded-full hover:border-primary hover:bg-primary/5 transition-all duration-300">Inquire <span class="group-hover:translate-x-0.5 transition-transform duration-200">&rarr;</span></a>
+  </div>
+</nav>
+</header>
+<main>
+<!-- Marquee Strip -->
+<div class="overflow-hidden border-y border-white/5 py-3 bg-surface-container-low">
+  <div class="marquee-track flex gap-10 whitespace-nowrap text-[10px] tracking-[0.22em] uppercase text-on-surface-variant/50">
+    <span>Exhibitions</span><span class="text-primary/70">&#10022;</span><span>Nachilima</span><span class="text-primary/70">&#10022;</span><span>Upcoming: First Solo Show</span><span class="text-primary/70">&#10022;</span><span>Lechwe Trust Art Gallery</span><span class="text-primary/70">&#10022;</span><span>Livingstone, Zambia</span><span class="text-primary/70">&#10022;</span><span>2026</span><span class="text-primary/70">&#10022;</span><span>Exhibitions</span><span class="text-primary/70">&#10022;</span><span>Nachilima</span><span class="text-primary/70">&#10022;</span><span>Upcoming: First Solo Show</span><span class="text-primary/70">&#10022;</span><span>Lechwe Trust Art Gallery</span><span class="text-primary/70">&#10022;</span><span>Livingstone, Zambia</span><span class="text-primary/70">&#10022;</span><span>2026</span><span class="text-primary/70">&#10022;</span>
+  </div>
+</div>
+<section class="py-20 px-8 lg:px-16 max-w-[1280px] mx-auto">
+  <div class="mb-16">
+    <p class="text-[11px] tracking-[0.3em] uppercase text-on-surface-variant/50 mb-4">Shows &amp; Events</p>
+    <h1 class="display italic font-bold text-on-surface leading-none" style="font-size:clamp(3rem,7vw,5.5rem);">Exhibitions</h1>
+    <p class="text-[15px] text-on-surface-variant font-light mt-4 max-w-lg leading-relaxed">Where Nachilima's work has been shown, and what's coming up.</p>
+  </div>
+
+  <!-- Upcoming -->
+  <div class="mb-20">
+    <p class="text-[11px] tracking-[0.3em] uppercase text-on-surface-variant/50 mb-8">Upcoming</p>
+    <div class="card-hover-glow border border-outline-variant/20 p-8 lg:p-12 bg-surface-container-low flex flex-col md:flex-row gap-10 items-start">
+      <div class="flex-shrink-0">
+        <img src="assets/images/optimized/nachi_img.jpg" alt="Nachilima" class="w-full md:w-64 aspect-[3/4] object-cover object-top"/>
+      </div>
+      <div class="space-y-5">
+        <div>
+          <span class="text-[11px] tracking-[0.25em] uppercase text-primary/80">Upcoming &mdash; 2026</span>
+          <h2 class="display italic text-3xl text-on-surface mt-2">Aspiring: First Solo Show</h2>
+        </div>
+        <p class="text-[14px] text-on-surface-variant font-light leading-relaxed max-w-lg">Nachilima's first solo exhibition, bringing together documentary photographs from Southern Zambia. The show will feature prints of everyday life, landscapes, and portraits from Livingstone and the surrounding region.</p>
+        <div class="space-y-2 text-[13px] text-on-surface-variant/70">
+          <p><span class="text-on-surface">Venue:</span> Lechwe Trust Art Gallery, Zambia (aspired)</p>
+          <p><span class="text-on-surface">Status:</span> In development</p>
+        </div>
+        <a href="inquiry.html" class="group inline-flex items-center gap-2 text-sm text-primary border-b border-primary/40 pb-px hover:border-primary transition-colors duration-300">Register interest <span class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Work grid teaser -->
+  <div>
+    <p class="text-[11px] tracking-[0.3em] uppercase text-on-surface-variant/50 mb-8">Featured work</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="overflow-hidden group gallery-card-hover"><img src="assets/images/optimized/Cow_&_Calf.jpg" alt="Cow &amp; Calf &mdash; Nachilima" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700"/></div>
+      <div class="overflow-hidden group gallery-card-hover md:mt-8"><img src="assets/images/optimized/Terrible_ratio,_1_15.jpg" alt="Terrible Ratio &mdash; Nachilima" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700"/></div>
+      <div class="overflow-hidden group gallery-card-hover"><img src="assets/images/optimized/Two_Pigs.jpg" alt="Two Pigs &mdash; Nachilima" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700"/></div>
+      <div class="overflow-hidden group gallery-card-hover md:mt-8"><img src="assets/images/optimized/Duck_on_the_side.jpg" alt="Duck on the Side &mdash; Nachilima" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700"/></div>
+    </div>
+    <div class="mt-8 text-right">
+      <a href="collection.html" class="text-sm text-on-surface-variant/60 hover:text-primary transition-colors duration-300 border-b border-transparent hover:border-primary/50 pb-px">View all works &rarr;</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="border-t border-white/5 bg-surface-container-lowest">
+  <div class="w-full py-10 px-8 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-6 max-w-[1280px] mx-auto">
+    <div class="flex flex-col items-center md:items-start gap-1.5">
+      <a href="index.html" class="display italic text-xl font-normal text-on-surface hover:text-primary transition-colors duration-300">Nachie's Space</a>
+      <p class="text-xs text-on-surface-variant/40">&copy; 2026 Nachilima (Constance Chola). All rights reserved.</p>
+    </div>
+    <div class="flex gap-7">
+      <a class="text-xs text-on-surface-variant/50 hover:text-primary transition-colors duration-300" href="about.html">About</a>
+      <a class="text-xs text-on-surface-variant/50 hover:text-primary transition-colors duration-300" href="collection.html">Gallery</a>
+      <a class="text-xs text-on-surface-variant/50 hover:text-primary transition-colors duration-300" href="inquiry.html">Contact</a>
+    </div>
+    <div class="flex gap-5 opacity-50 hover:opacity-100 transition-opacity">
+      <span class="material-symbols-outlined text-[18px] text-primary">language</span>
+      <span class="material-symbols-outlined text-[18px] text-primary">share</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
