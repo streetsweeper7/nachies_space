@@ -46,7 +46,7 @@
   <div class="absolute bottom-0 left-0 right-0 pb-16 px-8 lg:px-16 max-w-[1280px] mx-auto">
     <p class="text-[11px] tracking-[0.3em] uppercase text-primary/80 mb-4">About the Artist</p>
     <h1 class="display italic font-bold text-on-surface leading-none" style="font-size:clamp(3rem,8vw,6rem);">Nachilima</h1>
-    <p class="text-base text-on-surface-variant font-light mt-3">Constance Chola &nbsp;&middot;&nbsp; Livingstone, Southern Province, Zambia</p>
+    <p class="text-base text-on-surface-variant font-light mt-3 typewriter">Constance Chola &nbsp;&middot;&nbsp; Livingstone, Southern Province, Zambia</p>
   </div>
 </section>
 
@@ -136,7 +136,7 @@
 
   <!-- Full-bleed filmstrip -->
   <div class="overflow-hidden" id="nc-film">
-    <div id="nc-film-track" style="display:flex; gap:10px; width:max-content; height:65vh; animation: nc-filmroll 80s linear infinite;">
+    <div id="nc-film-track" style="display:flex; gap:10px; width:max-content; height:65vh;">
       <div style="height:100%; flex-shrink:0; overflow:hidden;">
         <img src="assets/images/optimized/personal_01.jpg" alt="Nachilima" style="height:100%; width:auto; display:block;" loading="lazy"/>
       </div>
@@ -226,7 +226,8 @@
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
-#nc-film-track:hover { animation-play-state: paused; }
+#nc-film-track { animation: nc-filmroll 80s linear infinite; }
+#nc-film:hover #nc-film-track { animation-play-state: paused; }
 </style>
 
 <!-- Selected work teaser -->

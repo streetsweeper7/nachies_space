@@ -242,3 +242,8 @@ nav a.border-b {
 .img-reveal:hover {
     filter: grayscale(0) brightness(1);
 }
+
+/* ─── Typewriter / monospace body text ─── */
+.typewriter {
+    font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+}
