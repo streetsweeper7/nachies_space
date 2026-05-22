@@ -16,6 +16,24 @@
   .display { font-family: 'Playfair Display', Georgia, serif; }
   body { font-family: 'DM Sans', system-ui, sans-serif; }
 </style>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // ─────────────────────────────────────────────────
+  // EMAILJS SETUP
+  // 1. Create a free account at https://www.emailjs.com
+  // 2. Add an email service (Yahoo, Gmail, etc.)
+  // 3. Create an email template with these variables:
+  //      {{from_name}}, {{from_email}}, {{subject}}, {{message}}
+  // 4. Replace the three placeholder values below
+  // ─────────────────────────────────────────────────
+  const EMAILJS_SERVICE_ID  = 'service_5y0kua8';
+  const EMAILJS_TEMPLATE_ID = 'template_6t9kndo';
+  const EMAILJS_PUBLIC_KEY  = 'XkC2DwisuQEHM-SeE';
+
+  (function () { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); })();
+</script>
 </head>
 <body class="bg-background text-on-surface">
 
@@ -124,7 +142,20 @@
     <!-- Contact form -->
     <div class="bg-surface-container p-8 lg:p-10 border border-outline-variant/20">
       <h2 class="display italic text-2xl text-on-surface mb-8">Send a message</h2>
-      <form class="space-y-6" onsubmit="return false;">
+
+      <!-- Success message (hidden by default) -->
+      <div id="form-success" class="hidden mb-6 p-5 border border-primary/30 bg-primary/5 text-sm text-on-surface">
+        <p class="font-medium text-primary mb-1">Message sent.</p>
+        <p class="text-on-surface-variant font-light">Thanks for reaching out &mdash; I'll get back to you soon.</p>
+      </div>
+
+      <!-- Error message (hidden by default) -->
+      <div id="form-error" class="hidden mb-6 p-5 border border-red-500/30 bg-red-500/5 text-sm text-on-surface-variant">
+        Something went wrong. Please try emailing directly at
+        <a href="mailto:cholaconstance@yahoo.com" class="text-primary underline">cholaconstance@yahoo.com</a>.
+      </div>
+
+      <form id="inquiry-form" class="space-y-6" novalidate>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div class="space-y-2">
             <label class="text-[11px] tracking-[0.25em] uppercase text-on-surface-variant/60" for="name">Name</label>
@@ -154,9 +185,11 @@
             class="w-full form-input-underline text-sm py-2.5 resize-none"></textarea>
         </div>
         <div class="pt-2">
-          <button type="submit"
-            class="group flex items-center gap-2 text-sm bg-primary text-on-primary px-8 py-3 hover:shadow-[0_0_36px_rgba(196,120,60,0.25)] transition-all duration-300">
-            Send message <span class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
+          <button id="submit-btn" type="submit"
+            class="group flex items-center gap-2 text-sm bg-primary text-on-primary px-8 py-3 hover:shadow-[0_0_36px_rgba(196,120,60,0.25)] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed">
+            <span id="btn-label">Send message</span>
+            <span id="btn-arrow" class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
+            <span id="btn-spinner" class="hidden animate-spin text-base leading-none">&#8635;</span>
           </button>
         </div>
       </form>
@@ -164,6 +197,65 @@
 
   </div>
 </main>
+
+<script>
+  document.getElementById('inquiry-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value.trim();
+
+    // Basic validation
+    if (!name || !email || !subject || !message) {
+      alert('Please fill in all fields before sending.');
+      return;
+    }
+
+    const btn     = document.getElementById('submit-btn');
+    const label   = document.getElementById('btn-label');
+    const arrow   = document.getElementById('btn-arrow');
+    const spinner = document.getElementById('btn-spinner');
+    const success = document.getElementById('form-success');
+    const error   = document.getElementById('form-error');
+
+    // Loading state
+    btn.disabled = true;
+    label.textContent = 'Sending…';
+    arrow.classList.add('hidden');
+    spinner.classList.remove('hidden');
+    success.classList.add('hidden');
+    error.classList.add('hidden');
+
+    const subjectLabels = {
+      print:      "I'd like to purchase a print",
+      commission: "I have a commission in mind",
+      exhibition: 'Exhibition / collaboration',
+      other:      'Just saying hello'
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      from_name:  name,
+      from_email: email,
+      subject:    subjectLabels[subject] || subject,
+      message:    message
+    })
+    .then(function () {
+      success.classList.remove('hidden');
+      document.getElementById('inquiry-form').reset();
+    })
+    .catch(function () {
+      error.classList.remove('hidden');
+    })
+    .finally(function () {
+      btn.disabled = false;
+      label.textContent = 'Send message';
+      arrow.classList.remove('hidden');
+      spinner.classList.add('hidden');
+    });
+  });
+</script>
 
 <!-- Footer -->
 <footer class="border-t border-white/5 bg-surface-container-lowest mt-20">
