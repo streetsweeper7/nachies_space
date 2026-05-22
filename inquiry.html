@@ -141,58 +141,85 @@
 
     <!-- Contact form -->
     <div class="bg-surface-container p-8 lg:p-10 border border-outline-variant/20">
-      <h2 class="display italic text-2xl text-on-surface mb-8">Send a message</h2>
 
-      <!-- Success message (hidden by default) -->
-      <div id="form-success" class="hidden mb-6 p-5 border border-primary/30 bg-primary/5 text-sm text-on-surface">
-        <p class="font-medium text-primary mb-1">Message sent.</p>
-        <p class="text-on-surface-variant font-light">Thanks for reaching out &mdash; I'll get back to you soon.</p>
+      <!-- SUCCESS PANEL — replaces form after send -->
+      <div id="form-success" style="display:none;" class="flex flex-col items-center justify-center text-center py-14 space-y-6 min-h-[420px]">
+        <div class="w-16 h-16 rounded-full border border-primary/40 flex items-center justify-center bg-primary/5">
+          <span class="material-symbols-outlined text-primary" style="font-size:2rem;">check</span>
+        </div>
+        <div class="space-y-3">
+          <h3 class="display italic text-on-surface" style="font-size:2rem;">Message sent.</h3>
+          <p class="text-sm text-on-surface-variant font-light leading-relaxed" style="max-width:280px;">
+            Thanks for reaching out &mdash; I'll get back to you as soon as I can.
+          </p>
+        </div>
+        <button onclick="resetInquiryForm()" class="mt-2 text-xs text-on-surface-variant/50 border-b border-on-surface-variant/25 pb-px hover:text-primary hover:border-primary/50 transition-colors duration-300">
+          Send another message
+        </button>
       </div>
 
-      <!-- Error message (hidden by default) -->
-      <div id="form-error" class="hidden mb-6 p-5 border border-red-500/30 bg-red-500/5 text-sm text-on-surface-variant">
-        Something went wrong. Please try emailing directly at
-        <a href="mailto:cholaconstance@yahoo.com" class="text-primary underline">cholaconstance@yahoo.com</a>.
+      <!-- FORM WRAPPER — hidden after send -->
+      <div id="form-wrapper">
+        <h2 class="display italic text-2xl text-on-surface mb-8">Send a message</h2>
+
+        <!-- Error banner -->
+        <div id="form-error" style="display:none;" class="mb-6 p-4 border-l-2 border-red-500/70 bg-red-500/5">
+          <p class="text-sm text-red-400 font-medium mb-0.5">Something went wrong.</p>
+          <p class="text-sm text-on-surface-variant/70 font-light">Please email directly at
+            <a href="mailto:cholaconstance@yahoo.com" class="text-primary underline">cholaconstance@yahoo.com</a>.
+          </p>
+        </div>
+
+        <form id="inquiry-form" class="space-y-6" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-1">
+              <label class="text-[11px] tracking-[0.25em] uppercase text-on-surface-variant/60" for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name"
+                class="w-full form-input-underline text-sm py-2.5"/>
+              <p id="name-error" style="display:none;" class="text-[11px] text-red-400 pt-0.5">Please enter your name.</p>
+            </div>
+            <div class="space-y-1">
+              <label class="text-[11px] tracking-[0.25em] uppercase text-on-surface-variant/60" for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com"
+                class="w-full form-input-underline text-sm py-2.5"/>
+              <p id="email-error" style="display:none;" class="text-[11px] text-red-400 pt-0.5">Please enter a valid email.</p>
+            </div>
+          </div>
+          <div class="space-y-1">
+            <label class="text-[11px] tracking-[0.25em] uppercase text-on-surface-variant/60" for="subject">Subject</label>
+            <select id="subject" name="subject"
+              class="w-full form-input-underline text-on-surface-variant text-sm py-2.5">
+              <option value="" disabled selected>Select a reason</option>
+              <option value="print">I'd like to purchase a print</option>
+              <option value="commission">I have a commission in mind</option>
+              <option value="exhibition">Exhibition / collaboration</option>
+              <option value="other">Just saying hello</option>
+            </select>
+            <p id="subject-error" style="display:none;" class="text-[11px] text-red-400 pt-0.5">Please select a subject.</p>
+          </div>
+          <div class="space-y-1">
+            <label class="text-[11px] tracking-[0.25em] uppercase text-on-surface-variant/60" for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me more..."
+              class="w-full form-input-underline text-sm py-2.5 resize-none"></textarea>
+            <p id="message-error" style="display:none;" class="text-[11px] text-red-400 pt-0.5">Please write a message.</p>
+          </div>
+          <div class="pt-2">
+            <button id="submit-btn" type="submit"
+              class="relative flex items-center gap-2 text-sm bg-primary text-on-primary px-8 py-3 hover:shadow-[0_0_36px_rgba(196,120,60,0.25)] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed overflow-hidden">
+              <span id="btn-label">Send message &rarr;</span>
+              <!-- SVG spinner overlay -->
+              <span id="btn-loading" style="display:none;" class="absolute inset-0 flex items-center justify-center gap-2 bg-primary">
+                <svg class="animate-spin h-4 w-4 text-on-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
+                <span class="text-sm text-on-primary">Sending&hellip;</span>
+              </span>
+            </button>
+          </div>
+        </form>
       </div>
 
-      <form id="inquiry-form" class="space-y-6" novalidate>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div class="space-y-2">
-            <label class="text-[11px] tracking-[0.25em] uppercase text-on-surface-variant/60" for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name"
-              class="w-full form-input-underline text-sm py-2.5"/>
-          </div>
-          <div class="space-y-2">
-            <label class="text-[11px] tracking-[0.25em] uppercase text-on-surface-variant/60" for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com"
-              class="w-full form-input-underline text-sm py-2.5"/>
-          </div>
-        </div>
-        <div class="space-y-2">
-          <label class="text-[11px] tracking-[0.25em] uppercase text-on-surface-variant/60" for="subject">Subject</label>
-          <select id="subject" name="subject"
-            class="w-full form-input-underline text-on-surface-variant text-sm py-2.5">
-            <option value="" disabled selected>Select a reason</option>
-            <option value="print">I'd like to purchase a print</option>
-            <option value="commission">I have a commission in mind</option>
-            <option value="exhibition">Exhibition / collaboration</option>
-            <option value="other">Just saying hello</option>
-          </select>
-        </div>
-        <div class="space-y-2">
-          <label class="text-[11px] tracking-[0.25em] uppercase text-on-surface-variant/60" for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell me more..."
-            class="w-full form-input-underline text-sm py-2.5 resize-none"></textarea>
-        </div>
-        <div class="pt-2">
-          <button id="submit-btn" type="submit"
-            class="group flex items-center gap-2 text-sm bg-primary text-on-primary px-8 py-3 hover:shadow-[0_0_36px_rgba(196,120,60,0.25)] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed">
-            <span id="btn-label">Send message</span>
-            <span id="btn-arrow" class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
-            <span id="btn-spinner" class="hidden animate-spin text-base leading-none">&#8635;</span>
-          </button>
-        </div>
-      </form>
     </div>
 
   </div>
@@ -202,59 +229,68 @@
   document.getElementById('inquiry-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const name    = document.getElementById('name').value.trim();
-    const email   = document.getElementById('email').value.trim();
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value.trim();
+    const nameVal    = document.getElementById('name').value.trim();
+    const emailVal   = document.getElementById('email').value.trim();
+    const subjectVal = document.getElementById('subject').value;
+    const messageVal = document.getElementById('message').value.trim();
 
-    // Basic validation
-    if (!name || !email || !subject || !message) {
-      alert('Please fill in all fields before sending.');
-      return;
-    }
+    // Inline validation — clear previous errors first
+    const nameErr    = document.getElementById('name-error');
+    const emailErr   = document.getElementById('email-error');
+    const subjectErr = document.getElementById('subject-error');
+    const messageErr = document.getElementById('message-error');
+    [nameErr, emailErr, subjectErr, messageErr].forEach(function (el) { el.style.display = 'none'; });
+
+    let valid = true;
+    if (!nameVal)                                           { nameErr.style.display    = 'block'; valid = false; }
+    if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) { emailErr.style.display   = 'block'; valid = false; }
+    if (!subjectVal)                                        { subjectErr.style.display = 'block'; valid = false; }
+    if (!messageVal)                                        { messageErr.style.display = 'block'; valid = false; }
+    if (!valid) return;
 
     const btn     = document.getElementById('submit-btn');
-    const label   = document.getElementById('btn-label');
-    const arrow   = document.getElementById('btn-arrow');
-    const spinner = document.getElementById('btn-spinner');
-    const success = document.getElementById('form-success');
+    const loading = document.getElementById('btn-loading');
     const error   = document.getElementById('form-error');
 
     // Loading state
     btn.disabled = true;
-    label.textContent = 'Sending…';
-    arrow.classList.add('hidden');
-    spinner.classList.remove('hidden');
-    success.classList.add('hidden');
-    error.classList.add('hidden');
+    loading.style.display = 'flex';
+    error.style.display   = 'none';
 
     const subjectLabels = {
       print:      "I'd like to purchase a print",
-      commission: "I have a commission in mind",
+      commission: 'I have a commission in mind',
       exhibition: 'Exhibition / collaboration',
       other:      'Just saying hello'
     };
 
     emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-      from_name:  name,
-      from_email: email,
-      subject:    subjectLabels[subject] || subject,
-      message:    message
+      from_name:  nameVal,
+      from_email: emailVal,
+      subject:    subjectLabels[subjectVal] || subjectVal,
+      message:    messageVal
     })
     .then(function () {
-      success.classList.remove('hidden');
-      document.getElementById('inquiry-form').reset();
+      document.getElementById('form-wrapper').style.display = 'none';
+      var successEl = document.getElementById('form-success');
+      successEl.style.display = 'flex';
+      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
     })
     .catch(function () {
-      error.classList.remove('hidden');
-    })
-    .finally(function () {
+      error.style.display = 'block';
+      error.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       btn.disabled = false;
-      label.textContent = 'Send message';
-      arrow.classList.remove('hidden');
-      spinner.classList.add('hidden');
+      loading.style.display = 'none';
     });
   });
+
+  function resetInquiryForm() {
+    document.getElementById('inquiry-form').reset();
+    document.getElementById('form-success').style.display  = 'none';
+    document.getElementById('form-wrapper').style.display  = 'block';
+    document.getElementById('submit-btn').disabled          = false;
+    document.getElementById('btn-loading').style.display   = 'none';
+  }
 </script>
 
 <!-- Footer -->
